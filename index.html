@@ -1,127 +1,189 @@
-<html>
-  <head>
-    <link rel="preconnect" href="https://fonts.gstatic.com/" crossorigin="" />
-    <link
-      rel="stylesheet"
-      as="style"
-      onload="this.rel='stylesheet'"
-      href="https://fonts.googleapis.com/css2?display=swap&amp;family=Noto+Sans%3Awght%40400%3B500%3B700%3B900&amp;family=Space+Grotesk%3Awght%40400%3B500%3B700"
-    />
+<!DOCTYPE html>
+<html lang="es"><head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<title>Tecnogam Automation</title>
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;500;700&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet"/>
+<link crossorigin="anonymous" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css" integrity="sha512-Fo3rlrZj/k7ujTnHg4CGR2D7kSs0v4LLanw2qksYuRlEzO+tcaEPQogQ0KaoGN26/zrn20ImR1DfuLWnOo7aBA==" referrerpolicy="no-referrer" rel="stylesheet"/>
+<style>
+        body {
+            font-family: 'Roboto', sans-serif;
+        }
+        .circuit-bg {
+            background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='100' height='100' viewBox='0 0 100 100'%3E%3Cg fill='%23f97316' fill-opacity='0.1'%3E%3Crect x='0' y='0' width='50' height='50'/%3E%3Crect x='50' y='50' width='50' height='50'/%3E%3C/g%3E%3C/svg%3E");
+        }
+    </style>
+</head>
+<body class="bg-gray-100">
+<header class="bg-white shadow-md">
+<div class="container mx-auto px-6 py-4 flex justify-between items-center">
+<div class="text-3xl font-bold text-gray-800">
+<span class="text-orange-500">TECNO</span>GAM
+            </div>
+<nav class="hidden md:flex space-x-6 items-center">
+<a class="text-gray-600 hover:text-orange-500 transition-colors" href="#">Inicio</a>
+<a class="text-gray-600 hover:text-orange-500 transition-colors" href="#">Nosotros</a>
+<a class="text-gray-600 hover:text-orange-500 transition-colors" href="#">Catálogo</a>
+<a class="bg-orange-500 text-white px-4 py-2 rounded-full hover:bg-orange-600 transition-colors" href="#">Contacto</a>
+</nav>
+<button class="md:hidden">
+<span class="material-icons">
+                    menu
+                </span>
+</button>
+</div>
+</header>
+<main>
+<section class="bg-cover bg-center h-[600px] relative" style="background-image: url('https://lh3.googleusercontent.com/aida-public/AB6AXuAE61PxHtPXQM16PxuPLCothstRoSMldP3gqFuiF4sD1jkEyk19-sJZhu-ARoJxNWXUJvofuwmp42rYRPaa8dF0810dlCLr-K4s-xs8lNuoddMKTWN_pYWnvRz9NqzVC3irx_XTXWGq_5Iqe5dKziS0kAfgb3Rch6Nw5f4Cf9T1Af437Iv-kpvGqkzQSednFu0d7vKpqpX-FGsx0ZouATROu1xQgJvlf9MeharpL61lC9_PJjt7H7SYi3HOaIk1kGUBNNXEgUs8oLl1');">
+<div class="absolute inset-0 bg-black bg-opacity-60"></div>
+<div class="container mx-auto px-6 h-full flex flex-col justify-center items-start relative z-10">
+<h1 class="text-4xl md:text-6xl font-bold text-white leading-tight">Soluciones Integrales en <br/><span class="text-orange-500">Automatización Industrial</span></h1>
+<p class="text-lg md:text-xl text-white mt-4 max-w-xl">Especialistas en cableado estructurado, bandejas portacables e instalaciones para la industria.</p>
+<a class="mt-8 bg-orange-500 text-white px-8 py-3 rounded-full text-lg font-semibold hover:bg-orange-600 transition-colors" href="#">Conoce Más</a>
+</div>
+</section>
+<section class="py-20 bg-gray-50 circuit-bg">
+<div class="container mx-auto px-6">
+<h2 class="text-3xl font-bold text-center text-gray-800 mb-4">Busca tu Material</h2>
+<p class="text-center text-gray-600 mb-10 max-w-2xl mx-auto">Encuentra rápidamente los componentes y materiales que necesitas para tu proyecto. Utiliza nuestro buscador o explora el catálogo.</p>
+<div class="max-w-2xl mx-auto bg-white p-6 rounded-lg shadow-lg">
+<div class="flex">
+<input class="w-full px-4 py-3 rounded-l-md border-gray-300 focus:ring-orange-500 focus:border-orange-500" placeholder="Ej: Bandeja portacable 300x100" type="text"/>
+<button class="bg-orange-500 text-white px-6 py-3 rounded-r-md hover:bg-orange-600 transition-colors">
+<span class="material-icons">search</span>
+</button>
+</div>
+</div>
+</div>
+</section>
+<section class="py-20 bg-white">
+<div class="container mx-auto px-6">
+<div class="text-center mb-12">
+<h2 class="text-3xl font-bold text-gray-800">Explore Nuestro Catálogo</h2>
+<p class="text-lg text-gray-600 mt-2">Productos de alta calidad para tus proyectos industriales.</p>
+</div>
+<div class="grid grid-cols-2 md:grid-cols-4 gap-8">
+<div class="group text-center">
+<div class="bg-gray-100 p-6 rounded-lg flex items-center justify-center h-40 transform group-hover:scale-105 group-hover:bg-orange-100 transition-transform duration-300">
+<i class="fas fa-network-wired text-5xl text-orange-500"></i>
+</div>
+<h3 class="mt-4 font-semibold text-lg text-gray-800">Cableado</h3>
+</div>
+<div class="group text-center">
+<div class="bg-gray-100 p-6 rounded-lg flex items-center justify-center h-40 transform group-hover:scale-105 group-hover:bg-orange-100 transition-transform duration-300">
+<i class="fas fa-server text-5xl text-orange-500"></i>
+</div>
+<h3 class="mt-4 font-semibold text-lg text-gray-800">Bandejas Portacables</h3>
+</div>
+<div class="group text-center">
+<div class="bg-gray-100 p-6 rounded-lg flex items-center justify-center h-40 transform group-hover:scale-105 group-hover:bg-orange-100 transition-transform duration-300">
+<i class="fas fa-plug text-5xl text-orange-500"></i>
+</div>
+<h3 class="mt-4 font-semibold text-lg text-gray-800">Conectores</h3>
+</div>
+<div class="group text-center">
+<div class="bg-gray-100 p-6 rounded-lg flex items-center justify-center h-40 transform group-hover:scale-105 group-hover:bg-orange-100 transition-transform duration-300">
+<i class="fas fa-cogs text-5xl text-orange-500"></i>
+</div>
+<h3 class="mt-4 font-semibold text-lg text-gray-800">Accesorios</h3>
+</div>
+</div>
+<div class="text-center mt-12">
+<a class="bg-orange-500 text-white px-8 py-3 rounded-full text-lg font-semibold hover:bg-orange-600 transition-colors" href="#">Ver Catálogo Completo</a>
+</div>
+</div>
+</section>
+<section class="py-20 bg-gray-100">
+<div class="container mx-auto px-6">
+<div class="text-center">
+<h2 class="text-3xl font-bold text-gray-800">¿Por qué elegir Tecnogam?</h2>
+<p class="text-lg text-gray-600 mt-2">Tu socio estratégico para el éxito de tus proyectos industriales.</p>
+</div>
+<div class="mt-16 grid grid-cols-1 md:grid-cols-3 gap-12">
+<div class="text-center p-6 bg-white rounded-lg shadow-lg transform hover:-translate-y-2 transition-transform duration-300">
+<div class="flex justify-center items-center h-20 w-20 rounded-full bg-orange-500 text-white mx-auto mb-4">
+<span class="material-icons text-4xl">engineering</span>
+</div>
+<h3 class="text-xl font-bold text-gray-800 mb-2">Experiencia Comprobada</h3>
+<p class="text-gray-600">Años de experiencia en el sector nos respaldan, garantizando soluciones eficientes y de alta calidad.</p>
+</div>
+<div class="text-center p-6 bg-white rounded-lg shadow-lg transform hover:-translate-y-2 transition-transform duration-300">
+<div class="flex justify-center items-center h-20 w-20 rounded-full bg-orange-500 text-white mx-auto mb-4">
+<span class="material-icons text-4xl">high_quality</span>
+</div>
+<h3 class="text-xl font-bold text-gray-800 mb-2">Calidad Garantizada</h3>
+<p class="text-gray-600">Trabajamos con los mejores materiales y marcas del mercado para ofrecer instalaciones duraderas y seguras.</p>
+</div>
+<div class="text-center p-6 bg-white rounded-lg shadow-lg transform hover:-translate-y-2 transition-transform duration-300">
+<div class="flex justify-center items-center h-20 w-20 rounded-full bg-orange-500 text-white mx-auto mb-4">
+<span class="material-icons text-4xl">support_agent</span>
+</div>
+<h3 class="text-xl font-bold text-gray-800 mb-2">Soporte Personalizado</h3>
+<p class="text-gray-600">Ofrecemos atención y asesoramiento personalizado en cada etapa de tu proyecto.</p>
+</div>
+</div>
+</div>
+</section>
+<section class="py-20 bg-white">
+<div class="container mx-auto px-6">
+<h2 class="text-3xl font-bold text-center text-gray-800 mb-12">Nuestros Proveedores de Confianza</h2>
+<div class="flex flex-wrap justify-center items-center gap-x-16 gap-y-8">
+<img alt="Logo de Basor" class="h-24 md:h-28 transition-transform duration-300 hover:scale-110 grayscale hover:grayscale-0" src="https://lh3.googleusercontent.com/aida-public/AB6AXuBbXHEmZOaE5jT63Na6xD7TW9Xg4ikesL60gVUCIMIHTBxpyJgM6buf4K7I78sLnvi7kQdqNKkMZ7EORg1_EOvty9ajZWAGmFJndTND6FISBc5Fto5NSYV8bbplfK4o0eS9l1u9VtcopC-iqBccZos0uE0mCnDVypcDkKJ5BY1vIDocMz1ejvSVxuanIgMRWjn8Bt-YyAw3zM56UtxqK51ZanMui0osAXexEaJ1crJMbeZu8qyUlTFnSucZU-2BlCvdfZg3oZmHWT9z"/>
+<img alt="Logo de Norden" class="h-32 md:h-36 transition-transform duration-300 hover:scale-110 grayscale hover:grayscale-0" src="https://lh3.googleusercontent.com/aida-public/AB6AXuCrmqq_IcRchcNNqGLcsl8D7XrKR1C_lcV6HHPWWTDdq5JNep9kzTuphBVPoXkVdL_qsRmvyDTXfcDyg49CoWWn46Zt7bTgEMp9xE9iNEz23ENwk245PHy-krDnscu54kMM2zxZK-1gInl6NCnTJRaD-eewYrWCMv68CBmdC0-RzREc60kVrRDCopuJxRmvog22pXOGrMLzIv4q03jWn4_jarIac-YIwcmzxnJkYFpFG8EuVa_r6dC-xxQG5zbggpRy03GaM3oVpumI"/>
+</div>
+</div>
+</section>
+<section class="bg-orange-500 relative overflow-hidden">
+<div class="absolute -left-10 -bottom-10 w-40 h-40 bg-white/20 rounded-full"></div>
+<div class="absolute -right-16 -top-16 w-60 h-60 bg-white/20 rounded-full"></div>
+<div class="container mx-auto px-6 py-16 text-center text-white relative z-10">
+<h2 class="text-3xl font-bold">¿Listo para iniciar tu próximo proyecto?</h2>
+<p class="text-lg mt-2 max-w-2xl mx-auto">Contáctanos hoy mismo y descubre cómo podemos ayudarte a alcanzar tus metas de automatización industrial.</p>
+<a class="mt-8 inline-block bg-white text-orange-500 px-8 py-3 rounded-full text-lg font-semibold hover:bg-gray-200 transition-colors" href="#">Hablemos</a>
+</div>
+</section>
+</main>
+<footer class="bg-gray-800 text-white">
+<div class="container mx-auto px-6 py-10">
+<div class="grid grid-cols-1 md:grid-cols-3 gap-8">
+<div>
+<h3 class="text-xl font-bold"><span class="text-orange-500">TECNO</span>GAM</h3>
+<p class="mt-2 text-gray-400">Liderando el camino en la automatización industrial.</p>
+</div>
+<div>
+<h3 class="text-lg font-semibold">Enlaces Rápidos</h3>
+<ul class="mt-2 space-y-1">
+<li><a class="text-gray-400 hover:text-white" href="#">Inicio</a></li>
+<li><a class="text-gray-400 hover:text-white" href="#">Nosotros</a></li>
+<li><a class="text-gray-400 hover:text-white" href="#">Catálogo</a></li>
+<li><a class="text-gray-400 hover:text-white" href="#">Contacto</a></li>
+</ul>
+</div>
+<div>
+<h3 class="text-lg font-semibold">Contacto</h3>
+<p class="mt-2 text-gray-400">Email: contacto@tecnogam.com</p>
+<p class="text-gray-400">Teléfono: +123 456 7890</p>
+<div class="flex space-x-4 mt-4">
+<a class="text-gray-400 hover:text-white" href="#"><i class="fab fa-facebook-f"></i></a>
+<a class="text-gray-400 hover:text-white" href="#"><i class="fab fa-twitter"></i></a>
+<a class="text-gray-400 hover:text-white" href="#"><i class="fab fa-linkedin-in"></i></a>
+</div>
+</div>
+</div>
+<div class="border-t border-gray-700 mt-8 pt-6 text-center text-gray-500">
+<p>© 2024 Tecnogam Automation. Todos los derechos reservados.</p>
+</div>
+</div>
+</footer>
+<div class="fixed bottom-6 right-6 space-y-4 z-50">
+<a class="bg-green-500 text-white w-16 h-16 rounded-full flex items-center justify-center shadow-lg hover:bg-green-600 transition-colors" href="https://wa.me/1234567890" target="_blank">
+<i class="fab fa-whatsapp text-4xl"></i>
+</a>
+<button class="bg-blue-500 text-white w-16 h-16 rounded-full flex items-center justify-center shadow-lg hover:bg-blue-600 transition-colors">
+<span class="material-icons text-4xl">chat</span>
+</button>
+</div>
 
-    <title>Stitch Design</title>
-    <link rel="icon" type="image/x-icon" href="data:image/x-icon;base64," />
-
-    <script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
-  </head>
-  <body>
-    <div class="relative flex size-full min-h-screen flex-col bg-[#fcfaf8] group/design-root overflow-x-hidden" style='font-family: "Space Grotesk", "Noto Sans", sans-serif;'>
-      <div class="layout-container flex h-full grow flex-col">
-        <header class="flex items-center justify-between whitespace-nowrap border-b border-solid border-b-[#f4ede7] px-10 py-3">
-          <div class="flex items-center gap-4 text-[#1c140d]">
-            <div class="size-4">
-              <svg viewBox="0 0 48 48" fill="none" xmlns="http://www.w3.org/2000/svg">
-                <path
-                  d="M13.8261 30.5736C16.7203 29.8826 20.2244 29.4783 24 29.4783C27.7756 29.4783 31.2797 29.8826 34.1739 30.5736C36.9144 31.2278 39.9967 32.7669 41.3563 33.8352L24.8486 7.36089C24.4571 6.73303 23.5429 6.73303 23.1514 7.36089L6.64374 33.8352C8.00331 32.7669 11.0856 31.2278 13.8261 30.5736Z"
-                  fill="currentColor"
-                ></path>
-                <path
-                  fill-rule="evenodd"
-                  clip-rule="evenodd"
-                  d="M39.998 35.764C39.9944 35.7463 39.9875 35.7155 39.9748 35.6706C39.9436 35.5601 39.8949 35.4259 39.8346 35.2825C39.8168 35.2403 39.7989 35.1993 39.7813 35.1602C38.5103 34.2887 35.9788 33.0607 33.7095 32.5189C30.9875 31.8691 27.6413 31.4783 24 31.4783C20.3587 31.4783 17.0125 31.8691 14.2905 32.5189C12.0012 33.0654 9.44505 34.3104 8.18538 35.1832C8.17384 35.2075 8.16216 35.233 8.15052 35.2592C8.09919 35.3751 8.05721 35.4886 8.02977 35.589C8.00356 35.6848 8.00039 35.7333 8.00004 35.7388C8.00004 35.739 8 35.7393 8.00004 35.7388C8.00004 35.7641 8.0104 36.0767 8.68485 36.6314C9.34546 37.1746 10.4222 37.7531 11.9291 38.2772C14.9242 39.319 19.1919 40 24 40C28.8081 40 33.0758 39.319 36.0709 38.2772C37.5778 37.7531 38.6545 37.1746 39.3151 36.6314C39.9006 36.1499 39.9857 35.8511 39.998 35.764ZM4.95178 32.7688L21.4543 6.30267C22.6288 4.4191 25.3712 4.41909 26.5457 6.30267L43.0534 32.777C43.0709 32.8052 43.0878 32.8338 43.104 32.8629L41.3563 33.8352C43.104 32.8629 43.1038 32.8626 43.104 32.8629L43.1051 32.865L43.1065 32.8675L43.1101 32.8739L43.1199 32.8918C43.1276 32.906 43.1377 32.9246 43.1497 32.9473C43.1738 32.9925 43.2062 33.0545 43.244 33.1299C43.319 33.2792 43.4196 33.489 43.5217 33.7317C43.6901 34.1321 44 34.9311 44 35.7391C44 37.4427 43.003 38.7775 41.8558 39.7209C40.6947 40.6757 39.1354 41.4464 37.385 42.0552C33.8654 43.2794 29.133 44 24 44C18.867 44 14.1346 43.2794 10.615 42.0552C8.86463 41.4464 7.30529 40.6757 6.14419 39.7209C4.99695 38.7775 3.99999 37.4427 3.99999 35.7391C3.99999 34.8725 4.29264 34.0922 4.49321 33.6393C4.60375 33.3898 4.71348 33.1804 4.79687 33.0311C4.83898 32.9556 4.87547 32.8935 4.9035 32.8471C4.91754 32.8238 4.92954 32.8043 4.93916 32.7889L4.94662 32.777L4.95178 32.7688ZM35.9868 29.004L24 9.77997L12.0131 29.004C12.4661 28.8609 12.9179 28.7342 13.3617 28.6282C16.4281 27.8961 20.0901 27.4783 24 27.4783C27.9099 27.4783 31.5719 27.8961 34.6383 28.6282C35.082 28.7342 35.5339 28.8609 35.9868 29.004Z"
-                  fill="currentColor"
-                ></path>
-              </svg>
-            </div>
-            <h2 class="text-[#1c140d] text-lg font-bold leading-tight tracking-[-0.015em]">Automation Solutions</h2>
-          </div>
-          <div class="flex flex-1 justify-end gap-8">
-            <div class="flex items-center gap-9">
-              <a class="text-[#1c140d] text-sm font-medium leading-normal" href="#">Inicio</a>
-              <a class="text-[#1c140d] text-sm font-medium leading-normal" href="#">Servicios</a>
-              <a class="text-[#1c140d] text-sm font-medium leading-normal" href="#">Casos de Éxito</a>
-              <a class="text-[#1c140d] text-sm font-medium leading-normal" href="#">Nosotros</a>
-            </div>
-            <button
-              class="flex min-w-[84px] max-w-[480px] cursor-pointer items-center justify-center overflow-hidden rounded-lg h-10 px-4 bg-[#f38124] text-[#1c140d] text-sm font-bold leading-normal tracking-[0.015em]"
-            >
-              <span class="truncate">Contactar</span>
-            </button>
-          </div>
-        </header>
-        <div class="px-40 flex flex-1 justify-center py-5">
-          <div class="layout-content-container flex flex-col max-w-[960px] flex-1">
-            <div class="@container">
-              <div class="@[480px]:p-4">
-                <div
-                  class="flex min-h-[480px] flex-col gap-6 bg-cover bg-center bg-no-repeat @[480px]:gap-8 @[480px]:rounded-lg items-start justify-end px-4 pb-10 @[480px]:px-10"
-                  style='background-image: linear-gradient(rgba(0, 0, 0, 0.1) 0%, rgba(0, 0, 0, 0.4) 100%), url("https://lh3.googleusercontent.com/aida-public/AB6AXuCI_dIvHAkmpKTKxygy8r6Of5LCxHUrjMx1m8Ocs058b2UjgMuV5lHFrcb23IWHqQF5KsLgxhxT7ICU72KoVk5dp4eQUzTc_5Sp-faYoRUL7gcP7B7EoBEKrZpoo9_v3FsDBrUqvPnaHTRjV7Mvwv6zwgejsL903b1BH901i2xle-biWPLpQE9zz4ip3BDpz_QHPD-7yiNTsb15pUI5DR_3doTO_7k_-xefvHxkTOGrcmqgFyQruGIG-3pu54uEEuXr0OOkZpJ5DD4");'
-                >
-                  <div class="flex flex-col gap-2 text-left">
-                    <h1
-                      class="text-white text-4xl font-black leading-tight tracking-[-0.033em] @[480px]:text-5xl @[480px]:font-black @[480px]:leading-tight @[480px]:tracking-[-0.033em]"
-                    >
-                      Impulsando la eficiencia en la industria
-                    </h1>
-                    <h2 class="text-white text-sm font-normal leading-normal @[480px]:text-base @[480px]:font-normal @[480px]:leading-normal">
-                      Automatizamos procesos para optimizar la producción y reducir costos.
-                    </h2>
-                  </div>
-                  <button
-                    class="flex min-w-[84px] max-w-[480px] cursor-pointer items-center justify-center overflow-hidden rounded-lg h-10 px-4 @[480px]:h-12 @[480px]:px-5 bg-[#f38124] text-[#1c140d] text-sm font-bold leading-normal tracking-[0.015em] @[480px]:text-base @[480px]:font-bold @[480px]:leading-normal @[480px]:tracking-[0.015em]"
-                  >
-                    <span class="truncate">Contactar</span>
-                  </button>
-                </div>
-              </div>
-            </div>
-            <h2 class="text-[#1c140d] text-[22px] font-bold leading-tight tracking-[-0.015em] px-4 pb-3 pt-5">Sobre Nosotros</h2>
-            <p class="text-[#1c140d] text-base font-normal leading-normal pb-3 pt-1 px-4">
-              Somos una empresa líder en soluciones de automatización industrial. Contamos con un equipo de expertos dedicados a diseñar e implementar sistemas que mejoran la
-              productividad y la calidad en diversos sectores.
-            </p>
-            <h2 class="text-[#1c140d] text-[22px] font-bold leading-tight tracking-[-0.015em] px-4 pb-3 pt-5">Nuestros Servicios</h2>
-            <div class="grid grid-cols-[repeat(auto-fit,minmax(158px,1fr))] gap-3 p-4">
-              <div class="flex flex-1 gap-3 rounded-lg border border-[#e8dace] bg-[#fcfaf8] p-4 items-center">
-                <div class="text-[#1c140d]" data-icon="Gear" data-size="24px" data-weight="regular">
-                  <svg xmlns="http://www.w3.org/2000/svg" width="24px" height="24px" fill="currentColor" viewBox="0 0 256 256">
-                    <path
-                      d="M128,80a48,48,0,1,0,48,48A48.05,48.05,0,0,0,128,80Zm0,80a32,32,0,1,1,32-32A32,32,0,0,1,128,160Zm88-29.84q.06-2.16,0-4.32l14.92-18.64a8,8,0,0,0,1.48-7.06,107.21,107.21,0,0,0-10.88-26.25,8,8,0,0,0-6-3.93l-23.72-2.64q-1.48-1.56-3-3L186,40.54a8,8,0,0,0-3.94-6,107.71,107.71,0,0,0-26.25-10.87,8,8,0,0,0-7.06,1.49L130.16,40Q128,40,125.84,40L107.2,25.11a8,8,0,0,0-7.06-1.48A107.6,107.6,0,0,0,73.89,34.51a8,8,0,0,0-3.93,6L67.32,64.27q-1.56,1.49-3,3L40.54,70a8,8,0,0,0-6,3.94,107.71,107.71,0,0,0-10.87,26.25,8,8,0,0,0,1.49,7.06L40,125.84Q40,128,40,130.16L25.11,148.8a8,8,0,0,0-1.48,7.06,107.21,107.21,0,0,0,10.88,26.25,8,8,0,0,0,6,3.93l23.72,2.64q1.49,1.56,3,3L70,215.46a8,8,0,0,0,3.94,6,107.71,107.71,0,0,0,26.25,10.87,8,8,0,0,0,7.06-1.49L125.84,216q2.16.06,4.32,0l18.64,14.92a8,8,0,0,0,7.06,1.48,107.21,107.21,0,0,0,26.25-10.88,8,8,0,0,0,3.93-6l2.64-23.72q1.56-1.48,3-3L215.46,186a8,8,0,0,0,6-3.94,107.71,107.71,0,0,0,10.87-26.25,8,8,0,0,0-1.49-7.06Zm-16.1-6.5a73.93,73.93,0,0,1,0,8.68,8,8,0,0,0,1.74,5.48l14.19,17.73a91.57,91.57,0,0,1-6.23,15L187,173.11a8,8,0,0,0-5.1,2.64,74.11,74.11,0,0,1-6.14,6.14,8,8,0,0,0-2.64,5.1l-2.51,22.58a91.32,91.32,0,0,1-15,6.23l-17.74-14.19a8,8,0,0,0-5-1.75h-.48a73.93,73.93,0,0,1-8.68,0,8,8,0,0,0-5.48,1.74L100.45,215.8a91.57,91.57,0,0,1-15-6.23L82.89,187a8,8,0,0,0-2.64-5.1,74.11,74.11,0,0,1-6.14-6.14,8,8,0,0,0-5.1-2.64L46.43,170.6a91.32,91.32,0,0,1-6.23-15l14.19-17.74a8,8,0,0,0,1.74-5.48,73.93,73.93,0,0,1,0-8.68,8,8,0,0,0-1.74-5.48L40.2,100.45a91.57,91.57,0,0,1,6.23-15L69,82.89a8,8,0,0,0,5.1-2.64,74.11,74.11,0,0,1,6.14-6.14A8,8,0,0,0,82.89,69L85.4,46.43a91.32,91.32,0,0,1,15-6.23l17.74,14.19a8,8,0,0,0,5.48,1.74,73.93,73.93,0,0,1,8.68,0,8,8,0,0,0,5.48-1.74L155.55,40.2a91.57,91.57,0,0,1,15,6.23L173.11,69a8,8,0,0,0,2.64,5.1,74.11,74.11,0,0,1,6.14,6.14,8,8,0,0,0,5.1,2.64l22.58,2.51a91.32,91.32,0,0,1,6.23,15l-14.19,17.74A8,8,0,0,0,199.87,123.66Z"
-                    ></path>
-                  </svg>
-                </div>
-                <h2 class="text-[#1c140d] text-base font-bold leading-tight">Automatización de Procesos</h2>
-              </div>
-              <div class="flex flex-1 gap-3 rounded-lg border border-[#e8dace] bg-[#fcfaf8] p-4 items-center">
-                <div class="text-[#1c140d]" data-icon="ChartLine" data-size="24px" data-weight="regular">
-                  <svg xmlns="http://www.w3.org/2000/svg" width="24px" height="24px" fill="currentColor" viewBox="0 0 256 256">
-                    <path
-                      d="M232,208a8,8,0,0,1-8,8H32a8,8,0,0,1-8-8V48a8,8,0,0,1,16,0v94.37L90.73,98a8,8,0,0,1,10.07-.38l58.81,44.11L218.73,90a8,8,0,1,1,10.54,12l-64,56a8,8,0,0,1-10.07.38L96.39,114.29,40,163.63V200H224A8,8,0,0,1,232,208Z"
-                    ></path>
-                  </svg>
-                </div>
-                <h2 class="text-[#1c140d] text-base font-bold leading-tight">Optimización de la Producción</h2>
-              </div>
-              <div class="flex flex-1 gap-3 rounded-lg border border-[#e8dace] bg-[#fcfaf8] p-4 items-center">
-                <div class="text-[#1c140d]" data-icon="ShieldCheck" data-size="24px" data-weight="regular">
-                  <svg xmlns="http://www.w3.org/2000/svg" width="24px" height="24px" fill="currentColor" viewBox="0 0 256 256">
-                    <path
-                      d="M208,40H48A16,16,0,0,0,32,56v58.78c0,89.61,75.82,119.34,91,124.39a15.53,15.53,0,0,0,10,0c15.2-5.05,91-34.78,91-124.39V56A16,16,0,0,0,208,40Zm0,74.79c0,78.42-66.35,104.62-80,109.18-13.53-4.51-80-30.69-80-109.18V56H208ZM82.34,141.66a8,8,0,0,1,11.32-11.32L112,148.68l50.34-50.34a8,8,0,0,1,11.32,11.32l-56,56a8,8,0,0,1-11.32,0Z"
-                    ></path>
-                  </svg>
-                </div>
-                <h2 class="text-[#1c140d] text-base font-bold leading-tight">Control de Calidad</h2>
-              </div>
-            </div>
-            <div class="flex px-4 py-3 justify-center">
-              <button
-                class="flex min-w-[84px] max-w-[480px] cursor-pointer items-center justify-center overflow-hidden rounded-lg h-10 px-4 bg-[#f38124] text-[#1c140d] text-sm font-bold leading-normal tracking-[0.015em]"
-              >
-                <span class="truncate">Contactar</span>
-              </button>
-            </div>
-          </div>
-        </div>
-      </div>
-    </div>
-  </body>
-</html>
+</body></html>
