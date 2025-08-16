@@ -1,0 +1,1033 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Soluciones Integrales en Automatización Industrial</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <style>
+        :root {
+            --primary-color: #FF6B00;
+            --secondary-color: #FF8C42;
+            --dark-color: #333333;
+            --light-color: #F5F5F5;
+            --white-color: #FFFFFF;
+            --text-color: #333333;
+        }
+
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+        }
+
+        body {
+            color: var(--text-color);
+            background-color: var(--white-color);
+            line-height: 1.6;
+        }
+
+        .container {
+            width: 90%;
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 0 15px;
+        }
+
+        /* Header Styles */
+        header {
+            background-color: var(--white-color);
+            box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+            position: sticky;
+            top: 0;
+            z-index: 100;
+        }
+
+        .header-container {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding: 15px 0;
+        }
+
+        .logo {
+            display: flex;
+            align-items: center;
+        }
+
+        .logo i {
+            font-size: 2rem;
+            color: var(--primary-color);
+            margin-right: 10px;
+        }
+
+        .logo h1 {
+            font-size: 1.5rem;
+            color: var(--dark-color);
+        }
+
+        nav ul {
+            display: flex;
+            list-style: none;
+        }
+
+        nav ul li {
+            margin-left: 25px;
+        }
+
+        nav ul li a {
+            text-decoration: none;
+            color: var(--dark-color);
+            font-weight: 500;
+            transition: color 0.3s;
+        }
+
+        nav ul li a:hover {
+            color: var(--primary-color);
+        }
+
+        .mobile-menu {
+            display: none;
+            font-size: 1.5rem;
+            cursor: pointer;
+            color: var(--primary-color);
+        }
+
+        /* Hero Section */
+        .hero {
+            background: linear-gradient(rgba(0, 0, 0, 0.7), rgba(0, 0, 0, 0.7)), url('https://picsum.photos/seed/industrial-automation/1600/800.jpg');
+            background-size: cover;
+            background-position: center;
+            color: var(--white-color);
+            padding: 100px 0;
+            text-align: center;
+        }
+
+        .hero h2 {
+            font-size: 3rem;
+            margin-bottom: 20px;
+            text-transform: uppercase;
+        }
+
+        .hero p {
+            font-size: 1.2rem;
+            max-width: 800px;
+            margin: 0 auto 30px;
+        }
+
+        .btn {
+            display: inline-block;
+            background-color: var(--primary-color);
+            color: var(--white-color);
+            padding: 12px 30px;
+            border-radius: 5px;
+            text-decoration: none;
+            font-weight: 600;
+            transition: background-color 0.3s;
+            border: none;
+            cursor: pointer;
+            font-size: 1rem;
+        }
+
+        .btn:hover {
+            background-color: var(--secondary-color);
+        }
+
+        /* Product Types Section */
+        .product-types-section {
+            padding: 60px 0;
+            background-color: var(--light-color);
+        }
+
+        .section-title {
+            text-align: center;
+            margin-bottom: 40px;
+        }
+
+        .section-title h3 {
+            font-size: 2rem;
+            color: var(--primary-color);
+            margin-bottom: 10px;
+        }
+
+        .section-title p {
+            max-width: 700px;
+            margin: 0 auto;
+            color: #666;
+        }
+
+        .product-types-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fill, minmax(200px, 1fr));
+            gap: 30px;
+        }
+
+        .product-type-card {
+            background-color: var(--white-color);
+            border-radius: 10px;
+            padding: 30px 20px;
+            text-align: center;
+            box-shadow: 0 5px 15px rgba(0, 0, 0, 0.05);
+            transition: transform 0.3s, box-shadow 0.3s;
+            cursor: pointer;
+        }
+
+        .product-type-card:hover {
+            transform: translateY(-10px);
+            box-shadow: 0 15px 30px rgba(0, 0, 0, 0.1);
+        }
+
+        .product-type-card i {
+            font-size: 3rem;
+            color: var(--primary-color);
+            margin-bottom: 20px;
+        }
+
+        .product-type-card h4 {
+            font-size: 1.2rem;
+            color: var(--dark-color);
+            margin-bottom: 10px;
+        }
+
+        .product-type-card p {
+            color: #666;
+            font-size: 0.9rem;
+        }
+
+        /* Search Section */
+        .search-section {
+            padding: 60px 0;
+        }
+
+        .search-container {
+            background-color: var(--white-color);
+            border-radius: 10px;
+            padding: 30px;
+            box-shadow: 0 5px 15px rgba(0, 0, 0, 0.05);
+        }
+
+        .search-container h3 {
+            color: var(--primary-color);
+            margin-bottom: 20px;
+            font-size: 1.8rem;
+            text-align: center;
+        }
+
+        .search-form {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 15px;
+            margin-bottom: 20px;
+        }
+
+        .search-form input, .search-form select {
+            flex: 1;
+            min-width: 200px;
+            padding: 12px;
+            border: 1px solid #ddd;
+            border-radius: 5px;
+            font-size: 1rem;
+        }
+
+        .search-form button {
+            background-color: var(--primary-color);
+            color: var(--white-color);
+            border: none;
+            padding: 12px 25px;
+            border-radius: 5px;
+            cursor: pointer;
+            font-weight: 600;
+            transition: background-color 0.3s;
+        }
+
+        .search-form button:hover {
+            background-color: var(--secondary-color);
+        }
+
+        .search-tags {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 10px;
+            margin-top: 20px;
+        }
+
+        .tag {
+            background-color: #f0f0f0;
+            padding: 5px 15px;
+            border-radius: 20px;
+            font-size: 0.9rem;
+            cursor: pointer;
+            transition: background-color 0.3s;
+        }
+
+        .tag:hover {
+            background-color: var(--secondary-color);
+            color: var(--white-color);
+        }
+
+        /* Search Results Section */
+        .search-results-section {
+            padding: 60px 0;
+            background-color: var(--light-color);
+        }
+
+        .search-results-header {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            margin-bottom: 30px;
+        }
+
+        .search-results-header h3 {
+            font-size: 1.8rem;
+            color: var(--primary-color);
+        }
+
+        .search-results-header p {
+            color: #666;
+        }
+
+        .search-results-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fill, minmax(250px, 1fr));
+            gap: 25px;
+        }
+
+        .product-card {
+            background-color: var(--white-color);
+            border-radius: 10px;
+            overflow: hidden;
+            box-shadow: 0 5px 15px rgba(0, 0, 0, 0.05);
+            transition: transform 0.3s, box-shadow 0.3s;
+        }
+
+        .product-card:hover {
+            transform: translateY(-10px);
+            box-shadow: 0 15px 30px rgba(0, 0, 0, 0.1);
+        }
+
+        .product-image {
+            width: 100%;
+            height: 200px;
+            background-color: #f0f0f0;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+        }
+
+        .product-image i {
+            font-size: 4rem;
+            color: #ddd;
+        }
+
+        .product-info {
+            padding: 20px;
+        }
+
+        .product-name {
+            font-size: 1.1rem;
+            font-weight: 600;
+            margin-bottom: 5px;
+            color: var(--dark-color);
+        }
+
+        .product-ref {
+            font-size: 0.9rem;
+            color: #666;
+            margin-bottom: 10px;
+        }
+
+        .product-price {
+            font-size: 1.2rem;
+            font-weight: 700;
+            color: var(--primary-color);
+            margin-bottom: 15px;
+        }
+
+        .product-btn {
+            width: 100%;
+            background-color: var(--primary-color);
+            color: var(--white-color);
+            border: none;
+            padding: 10px;
+            border-radius: 5px;
+            font-weight: 600;
+            cursor: pointer;
+            transition: background-color 0.3s;
+        }
+
+        .product-btn:hover {
+            background-color: var(--secondary-color);
+        }
+
+        /* Catalog Section */
+        .catalog-section {
+            padding: 60px 0;
+        }
+
+        .catalog-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fill, minmax(280px, 1fr));
+            gap: 25px;
+        }
+
+        .catalog-item {
+            background-color: var(--white-color);
+            border-radius: 10px;
+            overflow: hidden;
+            box-shadow: 0 5px 15px rgba(0, 0, 0, 0.05);
+            transition: transform 0.3s, box-shadow 0.3s;
+        }
+
+        .catalog-item:hover {
+            transform: translateY(-10px);
+            box-shadow: 0 15px 30px rgba(0, 0, 0, 0.1);
+        }
+
+        .catalog-item img {
+            width: 100%;
+            height: 200px;
+            object-fit: cover;
+        }
+
+        .catalog-item-content {
+            padding: 20px;
+        }
+
+        .catalog-item-content h4 {
+            margin-bottom: 10px;
+            color: var(--dark-color);
+        }
+
+        .catalog-item-content p {
+            color: #666;
+            margin-bottom: 15px;
+            font-size: 0.9rem;
+        }
+
+        .catalog-item-content .btn {
+            font-size: 0.9rem;
+            padding: 8px 20px;
+        }
+
+        /* Why Choose Us Section */
+        .why-choose-section {
+            padding: 60px 0;
+            background-color: var(--light-color);
+        }
+
+        .why-choose-content {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+        }
+
+        .why-choose-title {
+            text-align: center;
+            margin-bottom: 50px;
+        }
+
+        .why-choose-title h3 {
+            font-size: 2.2rem;
+            color: var(--primary-color);
+            margin-bottom: 15px;
+        }
+
+        .why-choose-title p {
+            font-size: 1.2rem;
+            color: #555;
+            max-width: 800px;
+        }
+
+        .features-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 40px;
+            width: 100%;
+        }
+
+        .feature-card {
+            background-color: var(--white-color);
+            border-radius: 15px;
+            padding: 40px 30px;
+            text-align: center;
+            box-shadow: 0 5px 15px rgba(0, 0, 0, 0.05);
+            transition: transform 0.3s, box-shadow 0.3s;
+            height: 100%;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+        }
+
+        .feature-card:hover {
+            transform: translateY(-10px);
+            box-shadow: 0 15px 30px rgba(0, 0, 0, 0.1);
+        }
+
+        .feature-icon {
+            width: 100px;
+            height: 100px;
+            background-color: var(--primary-color);
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            margin-bottom: 25px;
+        }
+
+        .feature-icon i {
+            font-size: 2.5rem;
+            color: var(--white-color);
+        }
+
+        .feature-card h4 {
+            font-size: 1.5rem;
+            margin-bottom: 15px;
+            color: var(--dark-color);
+        }
+
+        .feature-card p {
+            color: #666;
+            line-height: 1.8;
+        }
+
+        /* Suppliers Section */
+        .suppliers-section {
+            padding: 60px 0;
+        }
+
+        .suppliers-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fill, minmax(200px, 1fr));
+            gap: 30px;
+            margin-top: 40px;
+        }
+
+        .supplier-card {
+            background-color: var(--white-color);
+            border-radius: 10px;
+            padding: 25px;
+            text-align: center;
+            box-shadow: 0 5px 15px rgba(0, 0, 0, 0.05);
+            transition: transform 0.3s;
+        }
+
+        .supplier-card:hover {
+            transform: translateY(-5px);
+        }
+
+        .supplier-card i {
+            font-size: 3rem;
+            color: var(--primary-color);
+            margin-bottom: 15px;
+        }
+
+        .supplier-card h4 {
+            margin-bottom: 10px;
+            color: var(--dark-color);
+        }
+
+        .supplier-card p {
+            color: #666;
+            font-size: 0.9rem;
+        }
+
+        /* Footer */
+        footer {
+            background-color: var(--dark-color);
+            color: var(--white-color);
+            padding: 50px 0 20px;
+        }
+
+        .footer-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 30px;
+            margin-bottom: 30px;
+        }
+
+        .footer-column h4 {
+            font-size: 1.2rem;
+            margin-bottom: 20px;
+            color: var(--primary-color);
+        }
+
+        .footer-column ul {
+            list-style: none;
+        }
+
+        .footer-column ul li {
+            margin-bottom: 10px;
+        }
+
+        .footer-column ul li a {
+            color: #ccc;
+            text-decoration: none;
+            transition: color 0.3s;
+        }
+
+        .footer-column ul li a:hover {
+            color: var(--primary-color);
+        }
+
+        .footer-bottom {
+            text-align: center;
+            padding-top: 20px;
+            border-top: 1px solid #444;
+            color: #aaa;
+            font-size: 0.9rem;
+        }
+
+        /* Responsive Styles */
+        @media (max-width: 768px) {
+            .mobile-menu {
+                display: block;
+            }
+
+            nav ul {
+                position: fixed;
+                top: 70px;
+                left: 0;
+                width: 100%;
+                background-color: var(--white-color);
+                flex-direction: column;
+                align-items: center;
+                padding: 20px 0;
+                box-shadow: 0 5px 10px rgba(0, 0, 0, 0.1);
+                display: none;
+            }
+
+            nav ul.active {
+                display: flex;
+            }
+
+            nav ul li {
+                margin: 10px 0;
+            }
+
+            .hero h2 {
+                font-size: 2rem;
+            }
+
+            .search-form {
+                flex-direction: column;
+            }
+
+            .search-form input, .search-form select, .search-form button {
+                width: 100%;
+            }
+
+            .search-results-header {
+                flex-direction: column;
+                align-items: flex-start;
+                gap: 10px;
+            }
+        }
+    </style>
+</head>
+<body>
+    <!-- Header -->
+    <header>
+        <div class="container header-container">
+            <div class="logo">
+                <i class="fas fa-industry"></i>
+                <h1>Tecnogam</h1>
+            </div>
+            <nav>
+                <ul>
+                    <li><a href="#">Inicio</a></li>
+                    <li><a href="#">Catálogo</a></li>
+                    <li><a href="#">Servicios</a></li>
+                    <li><a href="#">Nosotros</a></li>
+                    <li><a href="#">Contacto</a></li>
+                </ul>
+            </nav>
+            <div class="mobile-menu">
+                <i class="fas fa-bars"></i>
+            </div>
+        </div>
+    </header>
+
+    <!-- Hero Section -->
+    <section class="hero">
+        <div class="container">
+            <h2>Soluciones Integrales en Automatización Industrial</h2>
+            <p>Ofrecemos las mejores soluciones tecnológicas para optimizar sus procesos industriales, aumentar la productividad y reducir costos operativos.</p>
+            <a href="#" class="btn">Descubre Más</a>
+        </div>
+    </section>
+
+    <!-- Product Types Section -->
+    <section class="product-types-section">
+        <div class="container">
+            <div class="section-title">
+                <h3>Tipos de Productos</h3>
+                <p>Explora nuestras categorías de productos para encontrar la solución perfecta para tus necesidades industriales.</p>
+            </div>
+            <div class="product-types-grid">
+                <div class="product-type-card">
+                    <i class="fas fa-microchip"></i>
+                    <h4>Controladores PLC</h4>
+                    <p>Autómatas programables para control de procesos</p>
+                </div>
+                <div class="product-type-card">
+                    <i class="fas fa-satellite-dish"></i>
+                    <h4>Sensores</h4>
+                    <p>Detección y medición precisa en entornos industriales</p>
+                </div>
+                <div class="product-type-card">
+                    <i class="fas fa-cogs"></i>
+                    <h4>Actuadores</h4>
+                    <p>Componentes para ejecutar acciones físicas en sistemas</p>
+                </div>
+                <div class="product-type-card">
+                    <i class="fas fa-desktop"></i>
+                    <h4>Interfaces HMI</h4>
+                    <p>Paneles de control táctiles para operación intuitiva</p>
+                </div>
+                <div class="product-type-card">
+                    <i class="fas fa-network-wired"></i>
+                    <h4>Redes Industriales</h4>
+                    <p>Soluciones de comunicación para sistemas integrados</p>
+                </div>
+                <div class="product-type-card">
+                    <i class="fas fa-robot"></i>
+                    <h4>Robótica</h4>
+                    <p>Sistemas automatizados para tareas complejas</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Search Section -->
+    <section class="search-section">
+        <div class="container">
+            <div class="search-container">
+                <h3>Busca tu Material</h3>
+                <form class="search-form">
+                    <input type="text" placeholder="Buscar producto..." id="search-input">
+                    <select id="category-select">
+                        <option value="">Todas las categorías</option>
+                        <option value="sensores">Sensores</option>
+                        <option value="actuadores">Actuadores</option>
+                        <option value="control">Control</option>
+                        <option value="seguridad">Seguridad</option>
+                        <option value="redes">Redes Industriales</option>
+                    </select>
+                    <select id="brand-select">
+                        <option value="">Todas las marcas</option>
+                        <option value="siemens">Siemens</option>
+                        <option value="rockwell">Rockwell Automation</option>
+                        <option value="schneider">Schneider Electric</option>
+                        <option value="abb">ABB</option>
+                        <option value="mitsubishi">Mitsubishi</option>
+                    </select>
+                    <button type="submit">Buscar</button>
+                </form>
+                <div class="search-tags">
+                    <span class="tag">PLCs</span>
+                    <span class="tag">Sensores de proximidad</span>
+                    <span class="tag">Variadores de frecuencia</span>
+                    <span class="tag">HMI</span>
+                    <span class="tag">Robótica industrial</span>
+                    <span class="tag">SCADA</span>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Search Results Section -->
+    <section class="search-results-section">
+        <div class="container">
+            <div class="search-results-header">
+                <h3>Resultados de Búsqueda</h3>
+                <p>Mostrando 4 resultados</p>
+            </div>
+            <div class="search-results-grid">
+                <div class="product-card">
+                    <div class="product-image">
+                        <i class="fas fa-box"></i>
+                    </div>
+                    <div class="product-info">
+                        <h4 class="product-name">Bandeja Portable 300x100</h4>
+                        <p class="product-ref">Ref: BPC - 300100</p>
+                        <p class="product-price">$25.50</p>
+                        <button class="product-btn">Ver más</button>
+                    </div>
+                </div>
+                <div class="product-card">
+                    <div class="product-image">
+                        <i class="fas fa-plug"></i>
+                    </div>
+                    <div class="product-info">
+                        <h4 class="product-name">Conector Rápido M12</h4>
+                        <p class="product-ref">Ref: CR - M12 - 01</p>
+                        <p class="product-price">$5.75</p>
+                        <button class="product-btn">Ver más</button>
+                    </div>
+                </div>
+                <div class="product-card">
+                    <div class="product-image">
+                        <i class="fas fa-ethernet"></i>
+                    </div>
+                    <div class="product-info">
+                        <h4 class="product-name">Cable UTP Cat 6</h4>
+                        <p class="product-ref">Ref: C - UTP6 - 100</p>
+                        <p class="product-price">$1.20/m</p>
+                        <button class="product-btn">Ver más</button>
+                    </div>
+                </div>
+                <div class="product-card">
+                    <div class="product-image">
+                        <i class="fas fa-grip-horizontal"></i>
+                    </div>
+                    <div class="product-info">
+                        <h4 class="product-name">Soporte de Pared</h4>
+                        <p class="product-ref">Ref: SP - BP - 05</p>
+                        <p class="product-price">$8.00</p>
+                        <button class="product-btn">Ver más</button>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Catalog Section -->
+    <section class="catalog-section">
+        <div class="container">
+            <div class="section-title">
+                <h3>Explore Nuestro Catálogo</h3>
+                <p>Descubra nuestra amplia gama de productos de automatización industrial de las mejores marcas del mercado.</p>
+            </div>
+            <div class="catalog-grid">
+                <div class="catalog-item">
+                    <img src="https://picsum.photos/seed/plc-controller/400/300.jpg" alt="PLC Controller">
+                    <div class="catalog-item-content">
+                        <h4>Controladores Lógicos Programables (PLC)</h4>
+                        <p>Controladores de alta performance para aplicaciones industriales complejas.</p>
+                        <a href="#" class="btn">Ver más</a>
+                    </div>
+                </div>
+                <div class="catalog-item">
+                    <img src="https://picsum.photos/seed/sensors/400/300.jpg" alt="Industrial Sensors">
+                    <div class="catalog-item-content">
+                        <h4>Sensores Industriales</h4>
+                        <p>Amplia gama de sensores para detección, medición y posicionamiento preciso.</p>
+                        <a href="#" class="btn">Ver más</a>
+                    </div>
+                </div>
+                <div class="catalog-item">
+                    <img src="https://picsum.photos/seed/drives/400/300.jpg" alt="Variable Frequency Drives">
+                    <div class="catalog-item-content">
+                        <h4>Variadores de Frecuencia</h4>
+                        <p>Control eficiente de motores para optimizar el consumo energético.</p>
+                        <a href="#" class="btn">Ver más</a>
+                    </div>
+                </div>
+                <div class="catalog-item">
+                    <img src="https://picsum.photos/seed/hmi/400/300.jpg" alt="HMI Panels">
+                    <div class="catalog-item-content">
+                        <h4>Interfaces Hombre-Máquina (HMI)</h4>
+                        <p>Paneles táctiles intuitivos para monitoreo y control de procesos.</p>
+                        <a href="#" class="btn">Ver más</a>
+                    </div>
+                </div>
+                <div class="catalog-item">
+                    <img src="https://picsum.photos/seed/robotics/400/300.jpg" alt="Industrial Robotics">
+                    <div class="catalog-item-content">
+                        <h4>Robótica Industrial</h4>
+                        <p>Soluciones robóticas para automatizar tareas de producción complejas.</p>
+                        <a href="#" class="btn">Ver más</a>
+                    </div>
+                </div>
+                <div class="catalog-item">
+                    <img src="https://picsum.photos/seed/networks/400/300.jpg" alt="Industrial Networks">
+                    <div class="catalog-item-content">
+                        <h4>Redes Industriales</h4>
+                        <p>Componentes para comunicación industrial robusta y confiable.</p>
+                        <a href="#" class="btn">Ver más</a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Why Choose Us Section -->
+    <section class="why-choose-section">
+        <div class="container">
+            <div class="why-choose-content">
+                <div class="why-choose-title">
+                    <h3>¿Por qué elegir Tecnogam?</h3>
+                    <p>Tu socio estratégico para el éxito de tus proyectos industriales.</p>
+                </div>
+                <div class="features-grid">
+                    <div class="feature-card">
+                        <div class="feature-icon">
+                            <i class="fas fa-award"></i>
+                        </div>
+                        <h4>Experiencia Comprobada</h4>
+                        <p>Años de experiencia en la industria nos permiten ofrecer soluciones eficientes y de alta calidad para tus proyectos.</p>
+                    </div>
+                    <div class="feature-card">
+                        <div class="feature-icon">
+                            <i class="fas fa-certificate"></i>
+                        </div>
+                        <h4>Calidad Garantizada</h4>
+                        <p>Utilizamos materiales de primera calidad para garantizar instalaciones duraderas y seguras en cada proyecto.</p>
+                    </div>
+                    <div class="feature-card">
+                        <div class="feature-icon">
+                            <i class="fas fa-headset"></i>
+                        </div>
+                        <h4>Soporte Personalizado</h4>
+                        <p>Ofrecemos asesoramiento y servicios personalizados en cada etapa de tu proyecto, desde el diseño hasta la implementación.</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Suppliers Section -->
+    <section class="suppliers-section">
+        <div class="container">
+            <div class="section-title">
+                <h3>Nuestros Proveedores</h3>
+                <p>Trabajamos con las mejores marcas del sector para garantizar la calidad y confiabilidad de nuestros productos.</p>
+            </div>
+            <div class="suppliers-grid">
+                <div class="supplier-card">
+                    <i class="fas fa-microchip"></i>
+                    <h4>Siemens</h4>
+                    <p>Líder en tecnologías de automatización y digitalización industrial.</p>
+                </div>
+                <div class="supplier-card">
+                    <i class="fas fa-cogs"></i>
+                    <h4>Rockwell Automation</h4>
+                    <p>Soluciones innovadoras para la industria conectada.</p>
+                </div>
+                <div class="supplier-card">
+                    <i class="fas fa-bolt"></i>
+                    <h4>Schneider Electric</h4>
+                    <p>Especialistas en gestión de energía y automatización.</p>
+                </div>
+                <div class="supplier-card">
+                    <i class="fas fa-robot"></i>
+                    <h4>ABB</h4>
+                    <p>Tecnología de vanguardia para la electrificación y automatización industrial.</p>
+                </div>
+                <div class="supplier-card">
+                    <i class="fas fa-industry"></i>
+                    <h4>Mitsubishi Electric</h4>
+                    <p>Automatización de alta calidad para la fabricación avanzada.</p>
+                </div>
+                <div class="supplier-card">
+                    <i class="fas fa-network-wired"></i>
+                    <h4>Phoenix Contact</h4>
+                    <p>Componentes y soluciones para la ingeniería industrial.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer>
+        <div class="container">
+            <div class="footer-grid">
+                <div class="footer-column">
+                    <h4>Tecnogam</h4>
+                    <p>Líderes en soluciones integrales de automatización industrial, ofreciendo tecnología de vanguardia para optimizar sus procesos productivos.</p>
+                </div>
+                <div class="footer-column">
+                    <h4>Enlaces Rápidos</h4>
+                    <ul>
+                        <li><a href="#">Inicio</a></li>
+                        <li><a href="#">Catálogo</a></li>
+                        <li><a href="#">Servicios</a></li>
+                        <li><a href="#">Nosotros</a></li>
+                        <li><a href="#">Contacto</a></li>
+                    </ul>
+                </div>
+                <div class="footer-column">
+                    <h4>Categorías</h4>
+                    <ul>
+                        <li><a href="#">Controladores PLC</a></li>
+                        <li><a href="#">Sensores</a></li>
+                        <li><a href="#">Actuadores</a></li>
+                        <li><a href="#">Interfaces HMI</a></li>
+                        <li><a href="#">Redes Industriales</a></li>
+                    </ul>
+                </div>
+                <div class="footer-column">
+                    <h4>Contacto</h4>
+                    <ul>
+                        <li><i class="fas fa-map-marker-alt"></i> Calle Industrial 123, Ciudad</li>
+                        <li><i class="fas fa-phone"></i> +1 234 567 890</li>
+                        <li><i class="fas fa-envelope"></i> info@tecnogam.com</li>
+                    </ul>
+                </div>
+            </div>
+            <div class="footer-bottom">
+                <p>&copy; 2023 Tecnogam. Todos los derechos reservados.</p>
+            </div>
+        </div>
+    </footer>
+
+    <script>
+        // Mobile menu toggle
+        document.querySelector('.mobile-menu').addEventListener('click', function() {
+            document.querySelector('nav ul').classList.toggle('active');
+        });
+
+        // Search functionality
+        document.querySelector('.search-form').addEventListener('submit', function(e) {
+            e.preventDefault();
+            const searchTerm = document.getElementById('search-input').value;
+            const category = document.getElementById('category-select').value;
+            const brand = document.getElementById('brand-select').value;
+            
+            // In a real application, this would perform an actual search
+            alert(`Buscando: ${searchTerm}, Categoría: ${category}, Marca: ${brand}`);
+        });
+
+        // Tag search functionality
+        document.querySelectorAll('.tag').forEach(tag => {
+            tag.addEventListener('click', function() {
+                document.getElementById('search-input').value = this.textContent;
+            });
+        });
+
+        // Product type card click functionality
+        document.querySelectorAll('.product-type-card').forEach(card => {
+            card.addEventListener('click', function() {
+                const productName = this.querySelector('h4').textContent;
+                document.getElementById('search-input').value = productName;
+                // Scroll to search section
+                document.querySelector('.search-section').scrollIntoView({ behavior: 'smooth' });
+            });
+        });
+
+        // Product card button functionality
+        document.querySelectorAll('.product-btn').forEach(button => {
+            button.addEventListener('click', function() {
+                const productName = this.closest('.product-card').querySelector('.product-name').textContent;
+                alert(`Ver más detalles de: ${productName}`);
+            });
+        });
+
+        // Smooth scrolling for anchor links
+        document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+            anchor.addEventListener('click', function(e) {
+                e.preventDefault();
+                const target = document.querySelector(this.getAttribute('href'));
+                if (target) {
+                    window.scrollTo({
+                        top: target.offsetTop,
+                        behavior: 'smooth'
+                    });
+                }
+            });
+        });
+    </script>
+</body>
+</html>
