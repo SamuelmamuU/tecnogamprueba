@@ -1,0 +1,286 @@
+<!DOCTYPE html>
+<html lang="es"><head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<title>Tecnogam Automation</title>
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;500;700&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet"/>
+<link crossorigin="anonymous" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css" integrity="sha512-Fo3rlrZj/k7ujTnHg4CGR2D7kSs0v4LLanw2qksYuRlEzO+tcaEPQogQ0KaoGN26/zrn20ImR1DfuLWnOo7aBA==" referrerpolicy="no-referrer" rel="stylesheet"/>
+<style type="text/tailwindcss">
+        body {
+            font-family: 'Roboto', sans-serif;
+        }
+        .circuit-bg {
+            background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='100' height='100' viewBox='0 0 100 100'%3E%3Cg fill='%23f97316' fill-opacity='0.1'%3E%3Crect x='0' y='0' width='50' height='50'/%3E%3Crect x='50' y='50' width='50' height='50'/%3E%3C/g%3E%3C/svg%3E");
+        }
+        .carousel-item {
+            display: none;
+            transition: opacity 1s ease-in-out;
+        }
+        .carousel-item.active {
+            display: block;
+            opacity: 1;
+        }
+        @keyframes fadeIn {
+            from { opacity: 0; }
+            to { opacity: 1; }
+        }
+        .carousel-item {
+            animation: fadeIn 1.5s;
+        }
+    </style>
+</head>
+<body class="bg-gray-100">
+<header class="bg-white shadow-md">
+<div class="container mx-auto px-6 py-4 flex justify-between items-center">
+<div class="text-3xl font-bold text-gray-800">
+<span class="text-orange-500">TECNO</span>GAM
+            </div>
+<nav class="hidden md:flex space-x-6 items-center">
+<a class="text-gray-600 hover:text-orange-500 transition-colors" href="#">Inicio</a>
+<a class="text-gray-600 hover:text-orange-500 transition-colors" href="#">Nosotros</a>
+<a class="text-gray-600 hover:text-orange-500 transition-colors" href="#">Catálogo</a>
+<a class="bg-orange-500 text-white px-4 py-2 rounded-full hover:bg-orange-600 transition-colors" href="#">Contacto</a>
+</nav>
+<button class="md:hidden">
+<span class="material-icons">
+                    menu
+                </span>
+</button>
+</div>
+</header>
+<main>
+<section class="h-[600px] relative overflow-hidden" id="banner-carousel">
+<div class="carousel-item active absolute inset-0 bg-cover bg-center" style="background-image: url('https://lh3.googleusercontent.com/aida-public/AB6AXuAE61PxHtPXQM16PxuPLCothstRoSMldP3gqFuiF4sD1jkEyk19-sJZhu-ARoJxNWXUJvofuwmp42rYRPaa8dF0810dlCLr-K4s-xs8lNuoddMKTWN_pYWnvRz9NqzVC3irx_XTXWGq_5Iqe5dKziS0kAfgb3Rch6Nw5f4Cf9T1Af437Iv-kpvGqkzQSednFu0d7vKpqpX-FGsx0ZouATROu1xQgJvlf9MeharpL61lC9_PJjt7H7SYi3HOaIk1kGUBNNXEgUs8oLl1');"></div>
+<div class="carousel-item absolute inset-0 bg-cover bg-center" style="background-image: url('https://lh3.googleusercontent.com/aida-public/AB6AXuACMdAzPT-YzrnsiPPGb1kLy6FyE4InzGtQrZ2mWFntGHVZGQP6B9lhIOIvLwAT6_X8STYfmdcbJLZrIokG2qiH1BiMx8HAg67AAJQSsTraEqUx5xBNRcC_4nkjIT22wFRfzjDCzRLFUoOQVpnVHQC53nAhgtEmUS2aA0yLLROFKOgv0R0ku-jlF7lsshU9q6rbVZEFD70WunWU29kFKtVWBjgaiYGIH5p8WoE_kAd33bDgycFrDlebLDL7npMmzFZZcYrHxbaHKnV0');"></div>
+<div class="carousel-item absolute inset-0 bg-cover bg-center" style="background-image: url('https://lh3.googleusercontent.com/aida-public/AB6AXuACMdAzPT-YzrnsiPPGb1kLy6FyE4InzGtQrZ2mWFntGHVZGQP6B9lhIOIvLwAT6_X8STYfmdcbJLZrIokG2qiH1BiMx8HAg67AAJQSsTraEqUx5xBNRcC_4nkjIT22wFRfzjDCzRLFUoOQVpnVHQC53nAhgtEmUS2aA0yLLROFKOgv0R0ku-jlF7lsshU9q6rbVZEFD70WunWU29kFKtVWBjgaiYGIH5p8WoE_kAd33bDgycFrDlebLDL7npMmzFZZcYrHxbaHKnV0');"></div>
+<div class="absolute inset-0 bg-black bg-opacity-60"></div>
+<div class="container mx-auto px-6 h-full flex flex-col justify-center items-start relative z-10">
+<h1 class="text-4xl md:text-6xl font-bold text-white leading-tight">Soluciones Integrales en <br/><span class="text-orange-500">Automatización Industrial</span></h1>
+<p class="text-lg md:text-xl text-white mt-4 max-w-xl">Especialistas en cableado estructurado, bandejas portacables e instalaciones para la industria.</p>
+<a class="mt-8 bg-orange-500 text-white px-8 py-3 rounded-full text-lg font-semibold hover:bg-orange-600 transition-colors" href="#">Conoce Más</a>
+</div>
+</section>
+<section class="py-20 bg-white">
+<div class="container mx-auto px-6">
+<div class="text-center mb-12">
+<h2 class="text-3xl font-bold text-gray-800">Explore Nuestro Catálogo</h2>
+<p class="text-lg text-gray-600 mt-2">Productos de alta calidad para tus proyectos industriales.</p>
+</div>
+<div class="grid grid-cols-2 md:grid-cols-4 gap-8">
+<div class="group text-center">
+<div class="bg-gray-100 p-6 rounded-lg flex items-center justify-center h-40 transform group-hover:scale-105 group-hover:bg-orange-100 transition-transform duration-300">
+<i class="fas fa-network-wired text-5xl text-orange-500"></i>
+</div>
+<h3 class="mt-4 font-semibold text-lg text-gray-800">Cableado</h3>
+</div>
+<div class="group text-center">
+<div class="bg-gray-100 p-6 rounded-lg flex items-center justify-center h-40 transform group-hover:scale-105 group-hover:bg-orange-100 transition-transform duration-300">
+<i class="fas fa-server text-5xl text-orange-500"></i>
+</div>
+<h3 class="mt-4 font-semibold text-lg text-gray-800">Bandejas Portacables</h3>
+</div>
+<div class="group text-center">
+<div class="bg-gray-100 p-6 rounded-lg flex items-center justify-center h-40 transform group-hover:scale-105 group-hover:bg-orange-100 transition-transform duration-300">
+<i class="fas fa-plug text-5xl text-orange-500"></i>
+</div>
+<h3 class="mt-4 font-semibold text-lg text-gray-800">Conectores</h3>
+</div>
+<div class="group text-center">
+<div class="bg-gray-100 p-6 rounded-lg flex items-center justify-center h-40 transform group-hover:scale-105 group-hover:bg-orange-100 transition-transform duration-300">
+<i class="fas fa-cogs text-5xl text-orange-500"></i>
+</div>
+<h3 class="mt-4 font-semibold text-lg text-gray-800">Accesorios</h3>
+</div>
+</div>
+<div class="text-center mt-12">
+<a class="bg-orange-500 text-white px-8 py-3 rounded-full text-lg font-semibold hover:bg-orange-600 transition-colors" href="#">Ver Catálogo Completo</a>
+</div>
+</div>
+</section>
+<section class="py-20 bg-gray-50 circuit-bg">
+<div class="container mx-auto px-6">
+<h2 class="text-3xl font-bold text-center text-gray-800 mb-4">Busca tu Material</h2>
+<p class="text-center text-gray-600 mb-10 max-w-2xl mx-auto">Encuentra rápidamente los componentes y materiales que necesitas para tu proyecto. Utiliza nuestro buscador.</p>
+<div class="max-w-2xl mx-auto bg-white p-6 rounded-lg shadow-lg">
+<div class="flex">
+<input class="w-full px-4 py-3 rounded-l-md border-gray-300 focus:ring-orange-500 focus:border-orange-500" placeholder="Ej: Bandeja portacable 300x100" type="text"/>
+<button class="bg-orange-500 text-white px-6 py-3 rounded-r-md hover:bg-orange-600 transition-colors">
+<span class="material-icons">search</span>
+</button>
+</div>
+</div>
+</div>
+</section>
+<section class="py-20 bg-white">
+<div class="container mx-auto px-6">
+<h2 class="text-3xl font-bold text-center text-gray-800 mb-12">Resultados de Búsqueda</h2>
+<div class="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-8">
+<div class="bg-white rounded-lg shadow-md overflow-hidden group">
+<div class="h-48 bg-gray-200 flex items-center justify-center">
+<img alt="Producto 1" class="object-contain h-full w-full" src="https://lh3.googleusercontent.com/aida-public/AB6AXuDQqW-J-pS-qP0WzP2S0qO-0P7Q_4p2-v4qW0Q9N5-eP7pZ3I8N0Q1Y2X9W1A8R3S2P4Q1Y-9C5D0Z8B7Q"/>
+</div>
+<div class="p-4">
+<h3 class="text-lg font-semibold text-gray-800">Bandeja Portacable 300x100</h3>
+<p class="text-gray-600 mt-1">Ref: BPC-300100</p>
+<div class="mt-4 flex justify-between items-center">
+<span class="text-xl font-bold text-orange-500">$25.50</span>
+<a class="text-orange-500 hover:text-orange-600 font-semibold" href="#">Ver más</a>
+</div>
+</div>
+</div>
+<div class="bg-white rounded-lg shadow-md overflow-hidden group">
+<div class="h-48 bg-gray-200 flex items-center justify-center">
+<i class="fas fa-image text-6xl text-gray-400"></i>
+</div>
+<div class="p-4">
+<h3 class="text-lg font-semibold text-gray-800">Conector Rápido M12</h3>
+<p class="text-gray-600 mt-1">Ref: CR-M12-01</p>
+<div class="mt-4 flex justify-between items-center">
+<span class="text-xl font-bold text-orange-500">$5.75</span>
+<a class="text-orange-500 hover:text-orange-600 font-semibold" href="#">Ver más</a>
+</div>
+</div>
+</div>
+<div class="bg-white rounded-lg shadow-md overflow-hidden group">
+<div class="h-48 bg-gray-200 flex items-center justify-center">
+<i class="fas fa-image text-6xl text-gray-400"></i>
+</div>
+<div class="p-4">
+<h3 class="text-lg font-semibold text-gray-800">Cable UTP Cat 6</h3>
+<p class="text-gray-600 mt-1">Ref: C-UTP6-100</p>
+<div class="mt-4 flex justify-between items-center">
+<span class="text-xl font-bold text-orange-500">$1.20/m</span>
+<a class="text-orange-500 hover:text-orange-600 font-semibold" href="#">Ver más</a>
+</div>
+</div>
+</div>
+<div class="bg-white rounded-lg shadow-md overflow-hidden group">
+<div class="h-48 bg-gray-200 flex items-center justify-center">
+<i class="fas fa-image text-6xl text-gray-400"></i>
+</div>
+<div class="p-4">
+<h3 class="text-lg font-semibold text-gray-800">Soporte de Pared</h3>
+<p class="text-gray-600 mt-1">Ref: SP-BP-05</p>
+<div class="mt-4 flex justify-between items-center">
+<span class="text-xl font-bold text-orange-500">$8.00</span>
+<a class="text-orange-500 hover:text-orange-600 font-semibold" href="#">Ver más</a>
+</div>
+</div>
+</div>
+</div>
+<p class="text-center text-gray-600 mt-12">No se encontraron más resultados para "Bandeja portacable 300x100".</p>
+</div>
+</section>
+<section class="py-20 bg-gray-100">
+<div class="container mx-auto px-6">
+<div class="text-center">
+<h2 class="text-3xl font-bold text-gray-800">¿Por qué elegir Tecnogam?</h2>
+<p class="text-lg text-gray-600 mt-2">Tu socio estratégico para el éxito de tus proyectos industriales.</p>
+</div>
+<div class="mt-16 grid grid-cols-1 md:grid-cols-3 gap-12">
+<div class="text-center p-6 bg-white rounded-lg shadow-lg transform hover:-translate-y-2 transition-transform duration-300">
+<div class="flex justify-center items-center h-20 w-20 rounded-full bg-orange-500 text-white mx-auto mb-4">
+<span class="material-icons text-4xl">engineering</span>
+</div>
+<h3 class="text-xl font-bold text-gray-800 mb-2">Experiencia Comprobada</h3>
+<p class="text-gray-600">Años de experiencia en el sector nos respaldan, garantizando soluciones eficientes y de alta calidad.</p>
+</div>
+<div class="text-center p-6 bg-white rounded-lg shadow-lg transform hover:-translate-y-2 transition-transform duration-300">
+<div class="flex justify-center items-center h-20 w-20 rounded-full bg-orange-500 text-white mx-auto mb-4">
+<span class="material-icons text-4xl">high_quality</span>
+</div>
+<h3 class="text-xl font-bold text-gray-800 mb-2">Calidad Garantizada</h3>
+<p class="text-gray-600">Trabajamos con los mejores materiales y marcas del mercado para ofrecer instalaciones duraderas y seguras.</p>
+</div>
+<div class="text-center p-6 bg-white rounded-lg shadow-lg transform hover:-translate-y-2 transition-transform duration-300">
+<div class="flex justify-center items-center h-20 w-20 rounded-full bg-orange-500 text-white mx-auto mb-4">
+<span class="material-icons text-4xl">support_agent</span>
+</div>
+<h3 class="text-xl font-bold text-gray-800 mb-2">Soporte Personalizado</h3>
+<p class="text-gray-600">Ofrecemos atención y asesoramiento personalizado en cada etapa de tu proyecto.</p>
+</div>
+</div>
+</div>
+</section>
+<section class="py-20 bg-white">
+<div class="container mx-auto px-6">
+<h2 class="text-3xl font-bold text-center text-gray-800 mb-12">Nuestros Proveedores de Confianza</h2>
+<div class="flex flex-wrap justify-center items-center gap-x-16 gap-y-8">
+<img alt="Logo de Basor" class="h-24 md:h-28 transition-transform duration-300 hover:scale-110 grayscale hover:grayscale-0" src="https://lh3.googleusercontent.com/aida-public/AB6AXuBbXHEmZOaE5jT63Na6xD7TW9Xg4ikesL60gVUCIMIHTBxpyJgM6buf4K7I78sLnvi7kQdqNKkMZ7EORg1_EOvty9ajZWAGmFJndTND6FISBc5Fto5NSYV8bbplfK4o0eS9l1u9VtcopC-iqBccZos0uE0mCnDVypcDkKJ5BY1vIDocMz1ejvSVxuanIgMRWjn8Bt-YyAw3zM56UtxqK51ZanMui0osAXexEaJ1crJMbeZu8qyUlTFnSucZU-2BlCvdfZg3oZmHWT9z"/>
+<img alt="Logo de Norden" class="h-32 md:h-36 transition-transform duration-300 hover:scale-110 grayscale hover:grayscale-0" src="https://lh3.googleusercontent.com/aida-public/AB6AXuCrmqq_IcRchcNNqGLcsl8D7XrKR1C_lcV6HHPWWTDdq5JNep9kzTuphBVPoXkVdL_qsRmvyDTXfcDyg49CoWWn46Zt7bTgEMp9xE9iNEz23ENwk245PHy-krDnscu54kMM2zxZK-1gInl6NCnTJRaD-eewYrWCMv68CBmdC0-RzREc60kVrRDCopuJxRmvog22pXOGrMLzIv4q03jWn4_jarIac-YIwcmzxnJkYFpFG8EuVa_r6dC-xxQG5zbggpRy03GaM3oVpumI"/>
+</div>
+</div>
+</section>
+<section class="bg-orange-500 relative overflow-hidden">
+<div class="absolute -left-10 -bottom-10 w-40 h-40 bg-white/20 rounded-full"></div>
+<div class="absolute -right-16 -top-16 w-60 h-60 bg-white/20 rounded-full"></div>
+<div class="container mx-auto px-6 py-16 text-center text-white relative z-10">
+<h2 class="text-3xl font-bold">¿Listo para iniciar tu próximo proyecto?</h2>
+<p class="text-lg mt-2 max-w-2xl mx-auto">Contáctanos hoy mismo y descubre cómo podemos ayudarte a alcanzar tus metas de automatización industrial.</p>
+<a class="mt-8 inline-block bg-white text-orange-500 px-8 py-3 rounded-full text-lg font-semibold hover:bg-gray-200 transition-colors" href="#">Hablemos</a>
+</div>
+</section>
+</main>
+<footer class="bg-gray-800 text-white">
+<div class="container mx-auto px-6 py-10">
+<div class="grid grid-cols-1 md:grid-cols-3 gap-8">
+<div>
+<h3 class="text-xl font-bold"><span class="text-orange-500">TECNO</span>GAM</h3>
+<p class="mt-2 text-gray-400">Liderando el camino en la automatización industrial.</p>
+</div>
+<div>
+<h3 class="text-lg font-semibold">Enlaces Rápidos</h3>
+<ul class="mt-2 space-y-1">
+<li><a class="text-gray-400 hover:text-white" href="#">Inicio</a></li>
+<li><a class="text-gray-400 hover:text-white" href="#">Nosotros</a></li>
+<li><a class="text-gray-400 hover:text-white" href="#">Catálogo</a></li>
+<li><a class="text-gray-400 hover:text-white" href="#">Contacto</a></li>
+</ul>
+</div>
+<div>
+<h3 class="text-lg font-semibold">Contacto</h3>
+<p class="mt-2 text-gray-400">Email: contacto@tecnogam.com</p>
+<p class="text-gray-400">Teléfono: +123 456 7890</p>
+<div class="flex space-x-4 mt-4">
+<a class="text-gray-400 hover:text-white" href="#"><i class="fab fa-facebook-f"></i></a>
+<a class="text-gray-400 hover:text-white" href="#"><i class="fab fa-twitter"></i></a>
+<a class="text-gray-400 hover:text-white" href="#"><i class="fab fa-linkedin-in"></i></a>
+</div>
+</div>
+</div>
+<div class="border-t border-gray-700 mt-8 pt-6 text-center text-gray-500">
+<p>© 2024 Tecnogam Automation. Todos los derechos reservados.</p>
+</div>
+</div>
+</footer>
+<div class="fixed bottom-6 right-6 space-y-4 z-50">
+<a class="bg-green-500 text-white w-16 h-16 rounded-full flex items-center justify-center shadow-lg hover:bg-green-600 transition-colors" href="https://wa.me/1234567890" target="_blank">
+<i class="fab fa-whatsapp text-4xl"></i>
+</a>
+<button class="bg-blue-500 text-white w-16 h-16 rounded-full flex items-center justify-center shadow-lg hover:bg-blue-600 transition-colors">
+<span class="material-icons text-4xl">chat</span>
+</button>
+</div>
+<script>
+    document.addEventListener('DOMContentLoaded', function () {
+        const carouselItems = document.querySelectorAll('#banner-carousel .carousel-item');
+        let currentItem = 0;
+        function showItem(index) {
+            carouselItems.forEach((item, i) => {
+                item.classList.remove('active');
+                if (i === index) {
+                    item.classList.add('active');
+                }
+            });
+        }
+        function nextItem() {
+            currentItem = (currentItem + 1) % carouselItems.length;
+            showItem(currentItem);
+        }
+        setInterval(nextItem, 5000); // Cambia cada 5 segundos
+    });
+</script>
+
+</body></html>
